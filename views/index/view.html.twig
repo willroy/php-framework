@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<div class="p-4 border">
+	<p>Items</p>
+	{% for item in items %}
+    <br> {{ item.item_content }}
+  {% endfor %}
+</div>
+
+{% endblock %}

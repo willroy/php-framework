@@ -1,0 +1,1 @@
+<?php echo "Error: 400 Bad Request"; ?>

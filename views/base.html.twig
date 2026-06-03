@@ -1,0 +1,27 @@
+<html>
+	<head>
+	  <meta charset="UTF-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <link rel="icon" type="image/x-icon" href="../public/icon.ico">
+	  <title>PHP Framework Example</title> 
+	  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	</head>
+
+	<body>
+		<div class="modal md:justify-items-center hidden bg-[#FDE74C]/50" onclick="this.classList.add('hidden')">
+			{% block modal %}{% endblock %}
+		</div>
+		<div class="mt-8 mx-8 lg:mx-0 lg:w-[1000px] lg:justify-self-center">
+			<div class="flex justify-between mb-4">
+				<div id="navigation">
+				  <a class="inline-block py-1 px-3 font-bold border border-solid {% if path == 'index/view' %}bg-[#FDE74C]{% endif %}" href="/">Home</a>
+				  <a class="inline-block py-1 px-3 font-bold border border-solid {% if path == 'auth/form' %}bg-[#FDE74C]{% endif %}" href="/auth/form">Auth</a>
+				  {% if auth_secret and auth_secret == ini.secret %}
+				    <a class="inline-block py-1 px-3 font-bold border border-solid {% if path == 'admin/view' %}bg-[#FDE74C]{% endif %}" href="/admin">Admin</a>
+				    <a class="inline-block py-1 px-3 font-bold border border-solid {% if path == 'entry/form' %}bg-[#FDE74C]{% endif %}" href="/entry/form">Add Item</a>
+				  {% endif %} 
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
