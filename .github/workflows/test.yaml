@@ -11,8 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: php-actions/composer@v6
+      - name: setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          tools: composer
       - name: install dependencies
-        run: composer install
+        run: composer install --no-interaction
       - name: run tests
         run: composer test
