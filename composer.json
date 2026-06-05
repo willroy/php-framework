@@ -6,6 +6,9 @@
         ],
         "evolutions": [
             "php scripts/evolutions.php"
+        ],
+        "test": [
+            "./vendor/bin/phpunit tests/*"
         ]
     },
     "require": {
