@@ -16,6 +16,8 @@ jobs:
         with:
           php-version: '8.5'
           tools: composer
+      - name: update
+        run: composer update
       - name: install dependencies
         run: composer install --no-interaction
       - name: run tests
